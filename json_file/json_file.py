@@ -92,6 +92,7 @@ class JSONFile(File):
     @staticmethod
     def is_json_string_formatted(json_string):
 
+        json_string = json_string.strip()
         json_object = json.loads(json_string)
         json_string_formatted_4 = json.dumps(json_object, indent=4)
         json_string_formatted_2 = json.dumps(json_object, indent=2)

@@ -64,6 +64,16 @@ def test_json_string_formatting():
     result = JSONFile.is_json_string_formatted(json_string_2_spaces)
     assert result is True
 
+    json_string_2_spaces_with_new_line = """
+{
+  "key1": "value1",
+  "key2": "value2"
+}
+"""
+
+    result = JSONFile.is_json_string_formatted(json_string_2_spaces_with_new_line)
+    assert result is True
+
     json_string_no_formatting = """{"key1": "value1"}"""
     result = JSONFile.is_json_string_formatted(json_string_no_formatting)
     assert result is False
