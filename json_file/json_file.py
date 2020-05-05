@@ -93,21 +93,22 @@ class JSONFile(File):
     def is_json_string_formatted(json_string):
 
         json_object = json.loads(json_string)
-        json_string_formatted = json.dumps(json_object, indent=4)
+        json_string_formatted_4 = json.dumps(json_object, indent=4)
+        json_string_formatted_2 = json.dumps(json_object, indent=2)
         json_string_not_formatted = json.dumps(json_object)
 
-        if json_string == json_string_formatted:
+        if json_string == json_string_formatted_4 or json_string == json_string_formatted_2:
             return True
 
         elif json_string == json_string_not_formatted:
             return False
 
         else:
-            raise NotADirectoryError
+            raise NotImplementedError
 
     def create_from_string(self, json_string):
         if self.exists:
-            raise NotADirectoryError
+            raise NotImplementedError
         self.write(json_string)
         return True
 

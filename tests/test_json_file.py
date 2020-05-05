@@ -44,16 +44,26 @@ def test_keep_formatting(tmp_path: Path):
 
 def test_json_string_formatting():
 
-    json_string = """\
+    json_string_4_spaces = """\
 {
     "key1": "value1",
     "key2": "value2"
 }\
 """
 
-    result = JSONFile.is_json_string_formatted(json_string)
+    result = JSONFile.is_json_string_formatted(json_string_4_spaces)
+    assert result is True
+    
+    json_string_2_spaces = """\
+{
+  "key1": "value1",
+  "key2": "value2"
+}\
+"""
+
+    result = JSONFile.is_json_string_formatted(json_string_2_spaces)
     assert result is True
 
-    json_string = """{"key1": "value1"}"""
-    result = JSONFile.is_json_string_formatted(json_string)
+    json_string_no_formatting = """{"key1": "value1"}"""
+    result = JSONFile.is_json_string_formatted(json_string_no_formatting)
     assert result is False
