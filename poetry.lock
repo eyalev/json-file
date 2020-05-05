@@ -72,7 +72,7 @@ description = ""
 name = "file-util"
 optional = false
 python-versions = ">=3.6,<4.0"
-version = "0.1.4"
+version = "0.1.5"
 
 [[package]]
 category = "dev"
@@ -230,7 +230,7 @@ docs = ["sphinx", "jaraco.packaging (>=3.2)", "rst.linker (>=1.9)"]
 testing = ["jaraco.itertools", "func-timeout"]
 
 [metadata]
-content-hash = "8068cf8817442b15cbc4ab4b7d3116492c9267a4f08de07a1613796d03c75830"
+content-hash = "4b88306faf64144ab8309a4d2ed4d3bd3f7e1390839278f65f5d71dec45f9c49"
 python-versions = "^3.6"
 
 [metadata.files]
@@ -259,8 +259,8 @@ colorama = [
     {file = "colorama-0.4.3.tar.gz", hash = "sha256:e96da0d330793e2cb9485e9ddfd918d456036c7149416295932478192f4436a1"},
 ]
 file-util = [
-    {file = "file-util-0.1.4.tar.gz", hash = "sha256:bc02a96ee1f2f557dbba97dd32e368efd1af6cbfc50941630403d08f20e6fa3a"},
-    {file = "file_util-0.1.4-py3-none-any.whl", hash = "sha256:12319bd9ceb5907fd8d127b3ff7624bb298f6109e5d3952e75f0b17084c4b8ad"},
+    {file = "file-util-0.1.5.tar.gz", hash = "sha256:a2c4e734288794c5f9612fdc16296e454b658d66b331bb2d32c1829a2f3c7949"},
+    {file = "file_util-0.1.5-py3-none-any.whl", hash = "sha256:ba24a657ebc1335b6cd8e57f868a3efe45ea4e9e68e949944400bd076db0b54f"},
 ]
 importlib-metadata = [
     {file = "importlib_metadata-1.6.0-py2.py3-none-any.whl", hash = "sha256:2a688cbaa90e0cc587f1df48bdc97a6eadccdcd9c35fb3f976a09e3b5016d90f"},
