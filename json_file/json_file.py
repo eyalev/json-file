@@ -38,9 +38,30 @@ class JSONFile(File):
     def is_not_formatted(self):
         return not self.is_formatted
 
+    @property
+    def string_stripped(self):
+        return self.string.strip()
+
+    @property
+    def formatted_4_spaces(self):
+        return json.dumps(self.dict, indent=4)
+
+    @property
+    def formatted_2_spaces(self):
+        return json.dumps(self.dict, indent=2)
+
+    @property
+    def indentation(self):
+        if self.string_stripped == self.formatted_4_spaces:
+            return 4
+        elif self.string_stripped == self.formatted_2_spaces:
+            return 2
+        else:
+            raise NotImplementedError
+
     def write_dict(self, _dict):
         if self.keep_formatting and self.is_formatted:
-            text = json.dumps(_dict, indent=4)
+            text = json.dumps(_dict, indent=self.indentation)
         else:
             text = json.dumps(_dict)
         self.write(text)
