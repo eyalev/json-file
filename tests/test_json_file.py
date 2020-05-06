@@ -50,6 +50,7 @@ def test_keep_formatting(tmp_path: Path):
     json_file.update_key_value(key="key", value="value")
     assert json_file.is_formatted
     assert json_file.indentation == 2
+    assert json_file.pretty == json_file.formatted_2_spaces
 
     json_string = """{"key1": "value1"}"""
     json_file.override_from_string(json_string)

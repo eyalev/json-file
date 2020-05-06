@@ -2,6 +2,8 @@
 from file_util import File
 import json
 
+DEFAULT_INDENT = 4
+
 
 class JSONFile(File):
 
@@ -20,7 +22,10 @@ class JSONFile(File):
 
     @property
     def pretty(self):
-        return json.dumps(self.dict, indent=4)
+        if self.keep_formatting:
+            return json.dumps(self.dict, indent=self.indentation)
+        else:
+            return json.dumps(self.dict, indent=DEFAULT_INDENT)
 
     @property
     def dict(self) -> dict:
